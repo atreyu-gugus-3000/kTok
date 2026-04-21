@@ -63,7 +63,7 @@ class KTokApp(App):
         # immediate first render
         await self._tick_signals()
         self._tick_prices()
-        self._render()
+        self._refresh_ui()
         # schedule tasks
         self.set_interval(1.0, self._on_price_tick)
         self.set_interval(30.0, self._on_signal_tick)
@@ -87,7 +87,7 @@ class KTokApp(App):
 
     def _on_price_tick(self) -> None:
         self._tick_prices()
-        self._render()
+        self._refresh_ui()
 
     def _tick_prices(self) -> None:
         signals = getattr(self, "_signals", None)
@@ -103,7 +103,7 @@ class KTokApp(App):
             self.events.push(f"🌅 new day. archived {self.portfolio.day}. fresh CHF 1000.")
             self.portfolio = Portfolio.fresh(today)
 
-    def _render(self) -> None:
+    def _refresh_ui(self) -> None:
         self.inventory.render_portfolio(self.portfolio, self.engine.prices)
         total = self.portfolio.total_value_chf(self.engine.prices)
         pnl = self.portfolio.pnl_pct(self.engine.prices)
