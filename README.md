@@ -45,10 +45,31 @@ is archived and you begin fresh – in parallel with your actual Claude Code dai
 git clone https://github.com/<you>/kTok.git
 cd kTok
 pip install -e .
-ktok
+ktok           # fullscreen Textual TUI
+ktokc          # inline CLI (sketch) – see `ktokc --help`
 ```
 
 Requires Python 3.11+.
+
+### Inline CLI (sketch)
+
+No fullscreen, just print-and-exit commands. Good for living inside a Claude
+Code statusline, or a tiny `watch`-style live line:
+
+```bash
+ktokc                         # market + depot + events
+ktokc ticker                  # one-liner, exit (feed this to your statusline)
+ktokc watch --every 5         # live one-liner, Ctrl-C out
+ktokc grant opus 50           # claim leftover kT from a real AI session
+ktokc buy sonnet 10
+ktokc sell opus 5
+ktokc history 14
+ktokc reset --cash 100
+```
+
+Starting cash defaults to `0`. You earn inventory via `grant` (manual for now;
+later auto-parsed from `ccusage` / `claude /cost`) or set it explicitly via
+`KTOK_STARTING_CASH=100 ktokc reset`. State lives at `~/.local/share/ktok/`.
 
 ## Architecture
 
@@ -66,6 +87,7 @@ ktok/
 ├── state/
 │   ├── portfolio.py   # Daily-reset portfolio
 │   └── history.py     # Archive past days for P&L history
+├── cli.py             # Inline CLI (sketch) – subcommands + one-liner ticker
 └── main.py
 ```
 

@@ -21,6 +21,7 @@ dev = [
 
 [project.scripts]
 ktok = "ktok.main:run"
+ktokc = "ktok.cli:run"
 
 [build-system]
 requires = ["setuptools>=68", "wheel"]
