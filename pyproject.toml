@@ -1,0 +1,34 @@
+[project]
+name = "ktok"
+version = "0.1.0"
+description = "Terminal game: trade the leftover tokens from your AI CLI sessions"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Samuel" }]
+dependencies = [
+    "textual>=0.60",
+    "httpx>=0.27",
+    "rich>=13.7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "ruff>=0.4",
+]
+
+[project.scripts]
+ktok = "ktok.main:run"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["ktok*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
