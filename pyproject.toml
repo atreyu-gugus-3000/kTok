@@ -7,7 +7,6 @@ requires-python = ">=3.11"
 license = { text = "MIT" }
 authors = [{ name = "Samuel" }]
 dependencies = [
-    "textual>=0.60",
     "httpx>=0.27",
     "rich>=13.7",
 ]
@@ -20,7 +19,7 @@ dev = [
 ]
 
 [project.scripts]
-ktok = "ktok.main:run"
+ktok = "ktok.cli:run"
 
 [build-system]
 requires = ["setuptools>=68", "wheel"]
