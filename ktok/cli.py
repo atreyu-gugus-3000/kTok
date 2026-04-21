@@ -1,19 +1,19 @@
-"""Inline CLI for kTok — no fullscreen, just print-and-exit commands.
+"""kTok — inline CLI. No fullscreen, just print-and-exit commands.
 
-Parallel zur Textual-TUI: minimaler Fussabdruck, Portfolio persistent als JSON,
-Subcommands fuer Aktionen, One-Liner fuer Claude-Code-Statusline.
+Portfolio persistent als JSON, Subcommands fuer Aktionen, One-Liner fuer
+Claude-Code-Statusline.
 
-    ktokc                    # = ktokc status
-    ktokc status             # market + depot + events
-    ktokc ticker             # one-liner (fuer statusline scripts)
-    ktokc watch [--every N]  # live one-liner, Ctrl-C raus
-    ktokc buy opus 10        # trade at current market price
-    ktokc sell sonnet 5
-    ktokc grant opus 50      # claim leftover kT from a real AI session
-    ktokc portfolio          # depot only, no market
-    ktokc history [n]        # last n archived days
-    ktokc reset [--cash CHF] # archive current, start fresh
-    ktokc assets             # list tradable assets
+    ktok                    # = ktok status
+    ktok status             # market + depot + events
+    ktok ticker             # one-liner (fuer statusline scripts)
+    ktok watch [--every N]  # live one-liner, Ctrl-C raus
+    ktok buy opus 10        # trade at current market price
+    ktok sell sonnet 5
+    ktok grant opus 50      # claim leftover kT from a real AI session
+    ktok portfolio          # depot only, no market
+    ktok history [n]        # last n archived days
+    ktok reset [--cash CHF] # archive current, start fresh
+    ktok assets             # list tradable assets
 
 Starting cash ist 0. Du bekommst Kapital durch `grant` (faktisch: "hier sind die
 Rest-Tokens meiner letzten echten Session") oder ueber `reset --cash`.
@@ -316,7 +316,7 @@ def cmd_assets(args: argparse.Namespace) -> int:
 # ---------- argparse ----------
 
 def _parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(prog="ktokc", description=__doc__.splitlines()[0])
+    p = argparse.ArgumentParser(prog="ktok", description=__doc__.splitlines()[0])
     sub = p.add_subparsers(dest="cmd")
 
     for name, fn in (
