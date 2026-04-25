@@ -30,13 +30,13 @@ class Ticker(Static):
 
     def update_quotes(self, quotes: list[Quote]) -> None:
         self._quotes = quotes
-        self._render()
+        self._refresh_text()
 
     def scroll_tick(self) -> None:
         self.offset += 1
-        self._render()
+        self._refresh_text()
 
-    def _render(self) -> None:
+    def _refresh_text(self) -> None:
         if not self._quotes:
             self.update("")
             return
