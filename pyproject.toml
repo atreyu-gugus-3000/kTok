@@ -28,6 +28,9 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools.packages.find]
 include = ["ktok*"]
 
+[tool.setuptools.package-data]
+"ktok.engine" = ["prices.json"]
+
 [tool.ruff]
 line-length = 100
 target-version = "py311"

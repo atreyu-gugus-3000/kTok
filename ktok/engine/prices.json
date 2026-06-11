@@ -1,0 +1,98 @@
+{
+  "currency": "CHF",
+  "unit": "kToken",
+  "note": "Base prices are rough CHF/kToken estimates for output tokens, early 2026. Not financial advice. Values marked PLACEHOLDER should be replaced from the provider's published price sheet. See docs/market-realism.md. Keys omitted per asset fall back to the Asset dataclass defaults (demand_sensitivity 0.6, etc.).",
+  "assets": [
+    {
+      "id": "opus",
+      "display": "AnCC opus",
+      "provider": "anthropic",
+      "tier": "flagship",
+      "base_price_chf_per_kt": 0.400,
+      "status_sensitivity": 0.9,
+      "hype_sensitivity": 0.7,
+      "volatility": 0.025
+    },
+    {
+      "id": "fable",
+      "display": "AnCC fable",
+      "provider": "anthropic",
+      "tier": "flagship",
+      "base_price_chf_per_kt": 0.350,
+      "status_sensitivity": 0.9,
+      "hype_sensitivity": 0.75,
+      "volatility": 0.026,
+      "price_note": "PLACEHOLDER — replace with real claude-fable-5 output price"
+    },
+    {
+      "id": "sonnet",
+      "display": "AnCC sonnet",
+      "provider": "anthropic",
+      "tier": "mid",
+      "base_price_chf_per_kt": 0.120,
+      "status_sensitivity": 0.8,
+      "hype_sensitivity": 0.5,
+      "volatility": 0.018
+    },
+    {
+      "id": "haiku",
+      "display": "AnCC haiku",
+      "provider": "anthropic",
+      "tier": "cheap",
+      "base_price_chf_per_kt": 0.040,
+      "status_sensitivity": 0.6,
+      "hype_sensitivity": 0.3,
+      "volatility": 0.012
+    },
+    {
+      "id": "gpt5",
+      "display": "oAI gpt5.4c",
+      "provider": "openai",
+      "tier": "flagship",
+      "base_price_chf_per_kt": 0.200,
+      "status_sensitivity": 0.85,
+      "hype_sensitivity": 0.8,
+      "volatility": 0.028
+    },
+    {
+      "id": "gpt5mini",
+      "display": "oAI gpt5.4m",
+      "provider": "openai",
+      "tier": "mid",
+      "base_price_chf_per_kt": 0.080,
+      "status_sensitivity": 0.75,
+      "hype_sensitivity": 0.5,
+      "volatility": 0.020
+    },
+    {
+      "id": "codex",
+      "display": "oAI codex",
+      "provider": "openai",
+      "tier": "mid",
+      "base_price_chf_per_kt": 0.150,
+      "status_sensitivity": 0.8,
+      "hype_sensitivity": 0.6,
+      "volatility": 0.022
+    },
+    {
+      "id": "gem_pro",
+      "display": "gGL gem2.5p",
+      "provider": "google",
+      "tier": "flagship",
+      "base_price_chf_per_kt": 0.180,
+      "status_sensitivity": 0.8,
+      "hype_sensitivity": 0.6,
+      "volatility": 0.024
+    },
+    {
+      "id": "gem_flash",
+      "display": "gGL flash",
+      "provider": "google",
+      "tier": "cheap",
+      "base_price_chf_per_kt": 0.050,
+      "status_sensitivity": 0.6,
+      "hype_sensitivity": 0.4,
+      "volatility": 0.015
+    }
+  ]
+}
