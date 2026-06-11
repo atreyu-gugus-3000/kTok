@@ -5,7 +5,7 @@ They're a starting point, not financial advice. The engine multiplies them by
 live signals to produce the market price.
 """
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from enum import Enum
 
 

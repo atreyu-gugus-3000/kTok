@@ -28,7 +28,6 @@ import os
 import sys
 import time
 from datetime import date, datetime
-from pathlib import Path
 
 from rich.console import Console
 from rich.live import Live
